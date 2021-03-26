@@ -14,5 +14,6 @@ img2.onload = function(){
   ctx2.drawImage(img2, 0, 0);
   let pixels = ctx2.getImageData(0,0, img2.width, img2.height);
   console.log(pixels.data.length);
-  ctx2.filter = 'brightness(150)';
+  ctx2.filter = 'brightness(2)';
+  ctx2.drawImage(img2, 0, 0);
 }
