@@ -13,15 +13,11 @@ img2.src="cat_face_eyes_gray_striped_green-794646.jpeg";
 img2.onload = function(){
   ctx2.drawImage(img2, 0, 0);
   let pixels = ctx2.getImageData(0,0, img2.width, img2.height);
-  let r = pixels.data[0];
-  let g = pixels.data[1];
-  let b = pixels.data[2];
   const brightConst = 1.7;
   for(let i=0; i<pixels.data.length; i+=4){
-    
-    r *= brightConst;
-    g *= brightConst;
-    b *= brightConst;
+    pixels.data[i] *= brightConst;
+    pixels.data[i + 1] *= brightConst;
+    pixels.data[i + 2] *= brightConst;
   }
   ctx2.putImageData(pixels, 0, 0);
 }
